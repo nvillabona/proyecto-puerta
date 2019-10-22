@@ -1,6 +1,6 @@
 <?php
     $url=$_SERVER['REQUEST_URI'];
-    header("Refresh: 1; URL=$url"); // Refresh the webpage every 5 seconds
+    header("Refresh: 1; URL=$url"); // Refresh the webpage every second
     ?>
     <html>
     <head>
