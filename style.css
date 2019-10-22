@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+    background-color: rgb(155, 143, 143);
+  }
+  
+  .izq{
+    height: 30%;
+    background-color: rgb(121, 161, 201);
+    margin: 1% 1%;
+    float: left;
+  }
+  .der{
+    height: 50%;
+    width: 50;
+    background-color: rgb(121, 161, 201);
+    margin: 1% 1%;
+    float: right;
+  }
+  .table_titles {
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #000;
+    }
+    .table_titles {
+    color: #FFF;
+    background-color: #0000FF;
+    }
+    table {
+    border: 2px solid #333;
+    }
+    body { font-family: "Trebuchet MS", Courier; }
