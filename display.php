@@ -1,21 +1,22 @@
-<html>
-
-<head>
-    <title>Arduino Ethernet Database</title>
-    <!-- id izq                       ----------------------------------------------------- -->
-    <div class="izq">
-        <link rel="stylesheet" href="style.css">
-        <script src="functions.js"></script>
-
-        <body onload="ConteoRegresivo()">
-
-</head>
-
-<body>
-    <?php
+<?php
         $url=$_SERVER['REQUEST_URI'];
         header("Refresh: 1; URL=$url"); // Refresh the webpage every second
         ?>
+    <html>
+
+    <head>
+        <title>Arduino Ethernet Database</title>
+        <!-- id izq                       ----------------------------------------------------- -->
+        <div class="izq">
+            <link rel="stylesheet" href="style.css">
+            <script src="functions.js"></script>
+
+            <body onload="ConteoRegresivo()">
+
+    </head>
+
+    <body>
+
         <h1>Arduino Data Logging to Database</h1>
         <table border="10" cellspacing="0" cellpadding="4">
             <tr>
@@ -85,6 +86,6 @@
         ?>
 
         </div>
-</body>
+    </body>
 
-</html>
+    </html>
