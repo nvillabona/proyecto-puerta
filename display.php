@@ -1,6 +1,6 @@
 <?php
     $url=$_SERVER['REQUEST_URI'];
-    header("Refresh: 5; URL=$url"); // Refresh the webpage every 5 seconds
+    header("Refresh: 1; URL=$url"); // Refresh the webpage every 5 seconds
     ?>
     <html>
     <head>
@@ -53,14 +53,32 @@
     </table>
 </div>
 <!-- class der ------------------------>
-    <div class="der">
+    <div class="otro">
     
-    test
+ 
     
-      <!-- <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg"> -->
+      <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style= "width: 100px ; height: 100px"> 
       <h2>Sistema de seguridad </h2>
-      <div id="contador"></div>
+      <!-- <div id="contador"></div> -->
       <h4><i> </i></h4>
+      <?php
+      include('connection.php');
+      date_default_timezone_set('America/Bogota');
+      $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC LIMIT 1 ');
+      
+      $date = strtotime("October 22, 2019 4:00 AM");
+      $remaining = $date - time();
+      $days_remaining = floor($remaining / 86400);
+      $hours_remaining = floor(($remaining % 86400) / 3600);
+      
+      echo "There are $days_remaining days and $hours_remaining hours left";
+      $timezone = date_default_timezone_get();
+      echo "The current server timezone is: " . $timezone;
+      echo "-- $date_fromDB";
+      
+    //   $date = date('m/d/Y h:i:s a', time());
+    //   echo $date;
+      ?>
     
     </div>
     </body>

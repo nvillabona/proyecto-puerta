@@ -1,6 +1,6 @@
 function ConteoRegresivo()
 {
-    var fecha=new Date("2019-10-21T00:45:00Z")
+    var fecha=new Date("2019-10-23T00:45:00Z")
     var hoy=new Date()
     var dias=0
     var horas=0
@@ -16,7 +16,7 @@ function ConteoRegresivo()
         minutos=Math.floor(diferencia/60)
         diferencia=diferencia-(60*minutos)
         segundos=Math.floor(diferencia)
-        document.getElementById('contador').innerHTML = 'La puerta se cerrará en '  + segundos + '  Segundos';
+        document.getElementById('contador').innerHTML = 'La puerta se cerrará en '  +minutos+ ":" + segundos + '  Segundos';
         if (dias>0 || horas>0 || minutos>0 || segundos>0)
         {
             setTimeout("ConteoRegresivo()",1000)
