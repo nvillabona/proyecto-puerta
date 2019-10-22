@@ -1,28 +1,31 @@
-<?php
-    $url=$_SERVER['REQUEST_URI'];
-    header("Refresh: 1; URL=$url"); // Refresh the webpage every second
-    ?>
-    <html>
-    <head>
+<html>
+
+<head>
     <title>Arduino Ethernet Database</title>
     <!-- id izq                       ----------------------------------------------------- -->
     <div class="izq">
-    <link rel="stylesheet" href="style.css">
-    <script src="functions.js"></script>
-    <body onload="ConteoRegresivo()">
-    
-    </head>
-    <body>
-    <h1>Arduino Data Logging to Database</h1>
-    <table border="10" cellspacing="0" cellpadding="4">
-    <tr>
-    <td class="table_titles">ID</td>
-    <td class="table_titles">Date and Time</td>
-    <td class="table_titles">Temperature</td>
-    <td class="table_titles">Humidity</td>
-    <td class="table_titles">Heat_index</td>
-    </tr>
+        <link rel="stylesheet" href="style.css">
+        <script src="functions.js"></script>
+
+        <body onload="ConteoRegresivo()">
+
+</head>
+
+<body>
     <?php
+        $url=$_SERVER['REQUEST_URI'];
+        header("Refresh: 1; URL=$url"); // Refresh the webpage every second
+        ?>
+        <h1>Arduino Data Logging to Database</h1>
+        <table border="10" cellspacing="0" cellpadding="4">
+            <tr>
+                <td class="table_titles">ID</td>
+                <td class="table_titles">Date and Time</td>
+                <td class="table_titles">Temperature</td>
+                <td class="table_titles">Humidity</td>
+                <td class="table_titles">Heat_index</td>
+            </tr>
+            <?php
       include('connection.php');
       //obtain data from db
       $result = mysqli_query($con,'SELECT * FROM data ORDER BY id DESC');
@@ -51,18 +54,18 @@
       // Close the connection
       mysqli_close($con);
     ?>
-    </table>
-</div>
-<!-- class der ------------------------>
-    <div class="der">
-    
- 
-    
-      <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style= "width: 100px ; height: 100px"> 
-      <h2>Sistema de seguridad </h2>
-      <!-- <div id="contador"></div> -->
-      <h4><i> </i></h4>
-        <?php
+        </table>
+        </div>
+        <!-- class der ------------------------>
+        <div class="der">
+
+
+
+            <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style="width: 100px ; height: 100px">
+            <h2>Sistema de seguridad </h2>
+            <!-- <div id="contador"></div> -->
+            <h4><i> </i></h4>
+            <?php
           include('connection.php');
           date_default_timezone_set('America/Bogota');
           $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC LIMIT 1 ');
@@ -80,7 +83,8 @@
           //$date = date('m/d/Y h:i:s a', time());
           //echo $date;
         ?>
-    
-    </div>
-    </body>
-    </html>
+
+        </div>
+</body>
+
+</html>
