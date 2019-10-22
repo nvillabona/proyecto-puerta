@@ -5,14 +5,16 @@
     <html>
     <head>
     <title>Arduino Ethernet Database</title>
+    <!-- id izq                       ----------------------------------------------------- -->
 <div class="izq">
 <link rel="stylesheet" href="style.css">
-
+<script src="functions.js"></script>
+<body onload="ConteoRegresivo()">
     
     </head>
     <body>
     <h1>Arduino Data Logging to Database</h1>
-    <table border="0" cellspacing="0" cellpadding="4">
+    <table border="10" cellspacing="0" cellpadding="4">
     <tr>
     <td class="table_titles">ID</td>
     <td class="table_titles">Date and Time</td>
@@ -50,15 +52,16 @@
     ?>
     </table>
 </div>
+<!-- class der ------------------------>
     <div class="der">
-    <script src="functions.js"></script>
+    
     test
-    <div id="contenedor">
+    
       <!-- <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg"> -->
       <h2>Sistema de seguridad </h2>
       <div id="contador"></div>
       <h4><i> </i></h4>
-      </div>
+    
     </div>
     </body>
     </html>
