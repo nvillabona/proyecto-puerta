@@ -76,10 +76,19 @@
           $date= new DateTime($fila['event']);
           $current_time = new DateTime('now');
         
-          $intervalo = $date->diff($current_time);
-          echo $intervalo->format('La puerta se abrió hace %H horas %i minutos 
-%s segundos');//00 años 0 meses 0 días 08 horas 0 minutos 0 segundos
+          
+          $date->add(new DateInterval('PT6S')); // adds 674165 secs
+        if($date > $current_time){
+            echo "<h1> La puerta está abierta </h1>";
+            $intervalo = $date->diff($current_time);
+            echo $intervalo->format('La puerta se cerrará en %H horas %i minutos %s segundos');
+        }else{
+            $intervalo = $date->diff($current_time);
+            echo "<h1> La puerta está Cerrada </h1>";
+            echo $intervalo->format('La puerta se abrió hace %H horas %i minutos %s segundos');
+        }
 
+        // *****código antiguo , puede ser util en el futuro*****
         //   $remaining = $current_time - $date ;
         //   $days_remaining = floor($remaining / 86400);
         //   $hours_remaining = floor(($remaining % 86400) / 3600);
