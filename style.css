@@ -7,20 +7,22 @@
      height: 30%;
      width: 35%;
      background-color: rgb(121, 161, 201);
-     margin: 1% 1%;
+     margin: 2% 4%;
      float: left;
      border-width: 3px;
-     border-style: dashed;
+     border-style: solid;
  }
  
  .der {
      height: 50%;
      width: 35%;
      background-color: rgb(121, 161, 201);
-     margin: 1% 1%;
+     margin: 2% 4%;
      float: right;
      padding-right: 20px;
      padding-left: 20px;
+     border-width: 3px;
+     border-style: solid;
  }
  
  .table_titles {

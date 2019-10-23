@@ -1,6 +1,6 @@
 <?php
         $url=$_SERVER['REQUEST_URI'];
-        header("Refresh: 1; URL=$url"); // Refresh the webpage every second
+        header("Refresh: 3; URL=$url"); // Refresh the webpage every second
         ?>
     <html>
 
@@ -69,17 +69,22 @@
             <?php
           include('connection.php');
           date_default_timezone_set('America/Bogota');
-          $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC LIMIT 1 ');
+          $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC  '); //LIMIT 1
           
           $date = strtotime("October 22, 2019 4:00 AM");
           $remaining = $date - time();
           $days_remaining = floor($remaining / 86400);
           $hours_remaining = floor(($remaining % 86400) / 3600);
-          
-          echo "There are $days_remaining days and $hours_remaining hours left";
+          $seconds_remaining = floor(($hours_remaining)/3600);
+          echo "There are $days_remaining days and $hours_remaining hours left seconds $seconds_remaining";
           $timezone = date_default_timezone_get();
-          echo "The current server timezone is: " . $timezone;
-          echo "-- $date_fromDB";
+          $time = time();
+          echo "The current server timezone is: " . $timezone . "and time is " . $time;
+          
+          //trae el valor de event en la consulta sql
+          $fila = mysqli_fetch_array($date_fromDB);
+          echo "<h2>" .$fila['event'] .'</h2>';
+        
           
           //$date = date('m/d/Y h:i:s a', time());
           //echo $date;
