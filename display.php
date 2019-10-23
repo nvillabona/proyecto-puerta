@@ -1,6 +1,6 @@
 <?php
         $url=$_SERVER['REQUEST_URI'];
-        header("Refresh: 3; URL=$url"); // Refresh the webpage every second
+        header("Refresh: 0.9; URL=$url"); // Refresh the webpage every second
         ?>
     <html>
 
@@ -71,20 +71,31 @@
           date_default_timezone_set('America/Bogota');
           $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC  '); //LIMIT 1
           
-          $date = strtotime("October 22, 2019 4:00 AM");
-          $remaining = $date - time();
-          $days_remaining = floor($remaining / 86400);
-          $hours_remaining = floor(($remaining % 86400) / 3600);
-          $seconds_remaining = floor(($hours_remaining)/3600);
-          echo "There are $days_remaining days and $hours_remaining hours left seconds $seconds_remaining";
-          $timezone = date_default_timezone_get();
-          $time = time();
-          echo "The current server timezone is: " . $timezone . "and time is " . $time;
-          
-          //trae el valor de event en la consulta sql
+          //$date = strtotime("October 23, 2019 12:00 pM");
           $fila = mysqli_fetch_array($date_fromDB);
-          echo "<h2>" .$fila['event'] .'</h2>';
+          $date= new DateTime($fila['event']);
+          $current_time = new DateTime('now');
         
+          $intervalo = $date->diff($current_time);
+          echo $intervalo->format('La puerta se abrió hace %H horas %i minutos 
+%s segundos');//00 años 0 meses 0 días 08 horas 0 minutos 0 segundos
+
+        //   $remaining = $current_time - $date ;
+        //   $days_remaining = floor($remaining / 86400);
+        //   $hours_remaining = floor(($remaining % 86400) / 3600);
+        //   $minutes_remaining = floor(($hours_remaining)/60);
+        //   $seconds_remaining = floor(($hours_remaining)/60);
+        //   echo "There are $days_remaining days and $hours_remaining hours left,$minutes_remaining minutes,   seconds $seconds_remaining";
+        //   $timezone = date_default_timezone_get();
+        //   $time = date('m/d/Y h:i:s a', time());
+        //   echo "The current server timezone is: " . $timezone . "and time is " . $time;
+          
+        //   //trae el valor de event en la consulta sql
+        //   $fila = mysqli_fetch_array($date_fromDB);
+          
+          
+        //   echo "<h2>" .date('m/d/Y h:i:s a',$remaining) .'</h2>';
+          
           
           //$date = date('m/d/Y h:i:s a', time());
           //echo $date;
