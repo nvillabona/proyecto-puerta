@@ -8,7 +8,7 @@
         <title>Arduino Ethernet Database</title>
         <!-- id izq                       ----------------------------------------------------- -->
         <div class="izq">
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="stylex.css">
             <script src="functions.js"></script>
 
             <body onload="ConteoRegresivo()">
@@ -77,7 +77,7 @@
           $current_time = new DateTime('now');
         
           
-          $date->add(new DateInterval('PT6S')); // adds 674165 secs
+          $date->add(new DateInterval('PT6S')); // adds 6 secs
         if($date > $current_time){
             echo "<h1> La puerta está abierta </h1>";
             $intervalo = $date->diff($current_time);
