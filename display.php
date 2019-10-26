@@ -62,7 +62,7 @@
 
 
 
-            <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style="width: 100px ; height: 100px">
+            <!-- <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style="width: 100px ; height: 100px"> -->
             <h2>Sistema de seguridad </h2>
             <!-- <div id="contador"></div> -->
             <h4><i> </i></h4>
@@ -79,10 +79,12 @@
           
           $date->add(new DateInterval('PT6S')); // adds 6 secs
         if($date > $current_time){
+            echo "<img src='https://image.flaticon.com/icons/png/512/61/61355.png' style='width: 100px ; height: 100px'>";
             echo "<h1> La puerta está abierta </h1>";
             $intervalo = $date->diff($current_time);
             echo $intervalo->format('La puerta se cerrará en %H horas %i minutos %s segundos');
         }else{
+            echo "<img src='https://image.flaticon.com/icons/png/512/61/61457.png' style='width: 100px ; height: 100px'>";
             $intervalo = $date->diff($current_time);
             echo "<h1> La puerta está Cerrada </h1>";
             echo $intervalo->format('La puerta se abrió hace %H horas %i minutos %s segundos');
