@@ -1,7 +1,6 @@
 <!-- esta es la rama andrés -->
-
-
-1<?php
+<!-- se va  a fusionar -->
+<?php
         $url=$_SERVER['REQUEST_URI'];
         header("Refresh: 0.9; URL=$url"); // Refresh the webpage every second
         ?>
