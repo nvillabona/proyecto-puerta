@@ -1,5 +1,4 @@
-<!-- esta es la rama andrés -->
-<!-- se va  a fusionar -->
+
 <?php
         $url=$_SERVER['REQUEST_URI'];
         header("Refresh: 0.9; URL=$url"); // Refresh the webpage every second
@@ -11,7 +10,7 @@
         <!-- id izq                       ----------------------------------------------------- -->
         <div class="izq">
             <link rel="stylesheet" href="stylex.css">
-            <script src="functions.js"></script>
+            
 
             <body onload="ConteoRegresivo()">
 
@@ -64,16 +63,16 @@
 
 
 
-            <!-- <img src="https://image.freepik.com/vector-gratis/vector-plantilla-puerta-abierta_23-2147495012.jpg" style="width: 100px ; height: 100px"> -->
+            
             <h2>Sistema de seguridad </h2>
-            <!-- <div id="contador"></div> -->
+           
             <h4><i> </i></h4>
             <?php
           include('connection.php');
           date_default_timezone_set('America/Bogota');
           $date_fromDB = mysqli_query($con,'SELECT * FROM data ORDER by event DESC  '); //LIMIT 1
           
-          //$date = strtotime("October 23, 2019 12:00 pM");
+          
           $fila = mysqli_fetch_array($date_fromDB);
           $date= new DateTime($fila['event']);
           $current_time = new DateTime('now');
@@ -92,26 +91,7 @@
             echo $intervalo->format('La puerta se abrió hace %H horas %i minutos %s segundos');
         }
 
-        // *****código antiguo , puede ser util en el futuro*****
-        //   $remaining = $current_time - $date ;
-        //   $days_remaining = floor($remaining / 86400);
-        //   $hours_remaining = floor(($remaining % 86400) / 3600);
-        //   $minutes_remaining = floor(($hours_remaining)/60);
-        //   $seconds_remaining = floor(($hours_remaining)/60);
-        //   echo "There are $days_remaining days and $hours_remaining hours left,$minutes_remaining minutes,   seconds $seconds_remaining";
-        //   $timezone = date_default_timezone_get();
-        //   $time = date('m/d/Y h:i:s a', time());
-        //   echo "The current server timezone is: " . $timezone . "and time is " . $time;
-          
-        //   //trae el valor de event en la consulta sql
-        //   $fila = mysqli_fetch_array($date_fromDB);
-          
-          
-        //   echo "<h2>" .date('m/d/Y h:i:s a',$remaining) .'</h2>';
-          
-          
-          //$date = date('m/d/Y h:i:s a', time());
-          //echo $date;
+     
         ?>
 
         </div>
